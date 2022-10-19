@@ -1,0 +1,45 @@
+Árboles Bayer/Árboles mutlicaminos
+
++árbol B más pequeño ---> Orden 2 (como mínimo dos 2elemntos, menos la raíz)
+	daca pag es una hoja o tiene exactamnete n+1 ramas descendientes, 
+	donde n es # de elementos contenidos
+	
+	el num máximo de elemntos de 1 página es 2*orden
+
+	Nodo que sea un arreglo, pero que sea de tipo dinámico, de manera que los datos a is
+	Es importante tener claro el concepto de orden para la inserción 
+
+	Orden = Cantidad mínima de elementos que puede contener un nodo
+
+	INserción:
+	1.-Buscar´página donde le corresponde al newValue
+	2.-Si tiene espacio se inserta
+	3.-Si no
+		Se simula la inserción
+		Se toma el elemento del centro, se generan 2 páginas nuevas, la izq con menores y la derecha con los mayores y el de en mediokiiii
+
+	x = 500;
+	raiz == null (puede insertar a x)
+
+Utilización:
+	Índices de Bases de Datos
+
+
+clase Arbol_B{
+	int orden;
+	Nodo izqu, der;
+	Nodo arreglos[]; 
+}
+
+Para borrar:
+N = Número de datos
+	N > al orden
+	Recorremos datos
+si la hoja tiene exactamente el mínimo
+
+Si un colchón tiene nmenos del mínimo la hoja/página se compacta
+
+La raíz sí puede tener menos datos del orden
+
+Caso #1: La hoja soporta al borrado --->
+Caso #2: La hoja no soporta al borrado ---> se pide prestado

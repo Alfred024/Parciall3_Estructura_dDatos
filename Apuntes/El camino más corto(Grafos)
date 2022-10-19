@@ -1,0 +1,8 @@
+El camino más corto
+
+El método programado de DFS nos auda a tener una ruta por la que es posible llegar a un destino deseado, y si diche ruta no existe, decirlo. A pesar de elo, la imlemntación del código no nos dará la ruta más corta para llegar a es destino deseado.
+
+	¿Qué podemos hacer para encontrar la ruta más corta?
+
+	Posibles soluciones:
+		-

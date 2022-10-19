@@ -1,0 +1,60 @@
+
+Cualquier probelma que involucre combinatorias
+¿Formas de recorrer un tablero de n*n dimensiones;
+
+Puede ser resuelto con grafos, pero no necesariamente
+ 
+Resolver problemáticas con combinaciones, cómo?
+	
+	Búsqueda en anchura (Breadth First Search/BFS): Gasta mucha memoria
+		Busca la solución por niveles
+		Estado inicial == estado final?? Si no, genera todas las demás alternativas
+		posibles del sigiente nivel, y si no encuentra la respuesta en ese nivel, se expande y
+		aumenta el nivel
+
+Cuándo búsqueda en anchura y cuándo en profundidad?
+
+	La anchura te garantiza encontrar la solución, podría enocntrar la solución desde el 
+	primer nivel, pero desperdicia mucha memoria, además que tampoco lleva el control de 
+	la ruta y no nos garantiza encontrar la mejor alternativa.
+
+	Profundidad tampoco nos garantiza encontrar la mejor ruta, podemos llegar al destino, pero por accidente
+	En porgramación: La cola reemplaza a la pila y la expansión es en todos los niveles, además que hay que tener el control de las rutas en cada uno de los casos
+
+Aún teniendo estas búsquedas, tampoco garantiza una buena solución para solucionar aquellos problemas de combinatorias, o algún otro problema
+
+
+Cómo resuelvo un problema con búsqueda informada??
+	En el caso de un grafo, podemos asignar un peso a las rutas /enlaces de los nodos
+
+	Escalada por la máxima pendiente/Hill climbing ---> Profundidad + anchura
+
+		En la expansión, se tendrá que hacer la pregunta de qué camino le conviene más
+
+		Cuándo se apila, checa el costo, y apilará de manera que los más económicos queden al principio
+
+		Incluso esta técnica no es infalible, por lo que no necesariamente encontrará la ruta más barata, podria decirse que encuentra la ruta intermedia
+		
+
+	Grafos O--> Anchura + Profundidad
+
+		La estrucutra de datos que utilizamos se convierte en una esecie de híbrido entre una lista y una pila
+
+		Grafos O para un laberinto
+
+
+Podar --> Elimniar las ramas que no me lleven a la solución
+
+	Si vuelvo a encontrarme un camino que ya descarté, no lo tomo(lo podo). El recordar implica más uso de memoria
+	
+
+
+DFS
+	+Puzzles con una solucuíon(como un laberinto)
+	+Encontrar caminos en un grafo
+	+Encontrar nodos fuertemente conectados
+
+BFS
+	+El mejor camino posible
+	+Encontrar el árbol de expansión mínima en un grafo no ponderado
+	+Sistemas de navegación GPS

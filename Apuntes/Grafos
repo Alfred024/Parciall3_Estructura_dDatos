@@ -1,0 +1,25 @@
+Grafos
+
+La teoría de grafo surge en el año 1856
+	Leonard Euler 
+	Le palnetan un problema(Puentes de Köninsberg), a aprtir de la búsqueda de la resuesta, plantea la teoría de grafos
+	El problema de los puentes
+
+	Representación gráfica de coneiones entre vértices y aristas
+
+	Vertices == Nodo
+	Arista == par ordenado de elementos entre 2 vértices
+	Grafo = Conjunto de vertices + Conjnuto de aristas
+
+	Clasificación:
+		-Grafos: Conexiones bidireccionales (A,B) == (B,A)
+		-Digrafos/Grafos dirigidos: Restricciones de conectividad (Establece una dirección)
+
+		Elementos: 
+			-Camino: NO son únicos
+			-Circuito: El origen y destino es el mismo
+			-Subgrafo: Camino o circuito que forma parte de elemntos de un grafo
+			-Complementos: Involucran las conexiones no existentes del grafo
+
+	Usos:
+		-Trazado de rutas: Google maps

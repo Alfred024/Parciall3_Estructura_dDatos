@@ -1,0 +1,58 @@
+Apuntes Unidad 4
+-Estructuras de datos no lineales
+
+---->Árboles AVL:
+	Creadores: Georgii Adelson Velskii y Yevgeniy Landis
+
+Balanceo de árboles: 
+	1.- Rotación simple a la derecha
+	2.- Rotación simple a la izquierda
+	3.- Rotación doble a la derecha
+	4.- Rotación doble a la izquierda
+
+ Factor de Equilibrio: Diferencia entre alturas del subárbol derecho y subárbol izquierdo
+
+ 	Applications Of AVL Trees
+		AVL trees are mostly used for in-memory sorts of sets and dictionaries.
+		AVL trees are also used extensively in database applications in which insertions and deletions are fewer but there are frequent lookups for data required.
+		It is used in applications that require improved searching apart from the database applications.
+
+
+Recorridos en árboles binarios:
+ 	-in order: IRD
+ 	-pre order: RID
+ 	-post order: DIR
+
+Estructuras no lineales
+También llamdas estructuras de datos multienlazadas, cada elemento puede tener varios sucesores o prodecesrores. 
+
+Están ezados a travpes de nodos, los cuales s eclasifican en: 
+	Raíz
+	Temrinal u hoja: no continen hijos
+	INteriores: Con uno o mpas hijojs
+	Descendientes/hijo:
+	Antecesot/Padre 
+
+Ejemplo: 	
+	-Árboles
+Se utilizan para representar jerarquías: taxonomías, árbol genalógico, diagrama de organixación
+
+Tuilizados para aplicaiones algorítmicas (ordenaíón y busqueda) o para compliación (árboles sintácticos o de expresiones)
+
+-Tipos de árboles:
+	*Similares: árboles con la misma estructura
+	*Equivalentes: Con la misma estructura e información
+	*Completos o perfectos: Todos los nodos, excepto las hojas, tienen grado 2
+	Equilibrado: Las alturas de los subárboles de cada uno de los nodos tiene como máximo una diferencia de una unidad.
+	Árbol degenerado: Todos sus nodos sólo tienen un subárbol
+
+	-Grafos: Cada elemento puede satr enlazado a cualquier otro
+
+Algunas aplicaciones de árboles binarios:
+	-Árbol de expresiones:
+	Los nodos internos son los operadores y las hojas los operandos, y las operaciones de menor prioridad ocuparán los niveles más altos
+
+	Codificación de Huffman 
+
+árboles inarios en la IA
+

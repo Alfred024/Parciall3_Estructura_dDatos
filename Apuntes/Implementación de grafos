@@ -1,0 +1,39 @@
+Implementación de grafos
+	Hay dos formas principales...
+
+	*Con matrices de adyacencia(Estática) --> Es más rápido de procesar una matriz, pero desperdicia más memoria
+	 	Representa vértices con columnas y renglones, *Búsqueda de acceso aleatorio
+
+
+	*Con Lista de adyacencia(Dinámica) --> Arreglo de apuntadores. *Búsqueda Secuencial a través de pasar por los nodos
+
+	 	Puedes hacer la lista ordenada, la venjtaja sería que puedes ahorrarte la búsqueda de los nodos una vez que encuentres el elemento, pero no es necesario, lo normal es que la lista no tenga un método para ordenar los nodos que insertan
+
+
+
+	¿Existe un camino? True/False
+	¿Cuál es el camino? Trayectoria  --> ¿Cuál es el camino más corto/más corto que pase por todos/...?
+
+	1.-Avanzar recordando que ya estuve (Implementando pilas)
+|	2.- Árbol de soluciones
+
+	diccionario representado en estructura de datos--> Con un árbol N-ario, y depende la implementación, llegaremos
+
+Deep First Search: Agota las posibilidades siguiendo un trayecto del árbol, sino la encuentra se regresa
+
+	1-.Apilar Est Actual
+	2.-Sacar Est Actual
+		2.5.- Se agrega en la ruta donde corresponde
+	3.- Si Est Actual == Est Final ---> Encontramos 
+	4.- Expandimos el Estado Actual
+	Expandir--> (Apilamos todos los caminos posibles del estado actual)
+	5.- Si hay nodos apilados repite desde 2
+	6.- No hay ruta
+
+Es necesario conocer las rutas por las cuales hemos pasado con anterioridad, paraello podemos 
+implementar una pila/stack que nos ayude a reordar;
+
+Backtrack
+
+Breath First Search (Investigar)
+

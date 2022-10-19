@@ -1,0 +1,30 @@
+Árboles Bayer2
+
+Características: 
+	Raíz: De 1 a 2n datos y 1 descendiente mínimos
+	Intermedios y hoja: Almacenan n a 2n datos y n+1 a 2n+1 descendientes
+	
+
+
+Empleados para operaciones de consulta y acceso secuencial. Existe una gran variedad de ´arboles B: los ´arboles B,
+B+ y B*
+
+Al tener más nodos hijos en cada nodo inerno las operaciones para balancearlo se reducen y la eficiencia aumneta. Un árbol B es eficiente al trabajar con una hoja de varios datos, es por ello que son muy útilies a la hora de trabajar con nuchísimos datos.
+
+Límite máximo y mínimo en el número de datos por  nodo.
+
+Estructura de un árbol:
+	Cada nodo puede poseer más de 2 hijos
+
+Info para reatcivos 
+	Utilización: ampliamente utilizados en la representaci´on de
+	´ındices en bases de datos. De hecho, este tipo de ´arboles est´an dise˜nados espec´ıficamente
+	para aplicaciones de bases de datos, donde la caracter´ıstica fundamental es la predominancia del tiempo de las operaciones de entrada/salida de disco en el tiempo de ejecuci´on
+	total.
+
+	Si un árbol es de orden n, quiere decir que cada página nueva contedrá n+1 punteros 
+	La cantidad mínima de claves que odrpa contener un árbol B, si el orden e n será (n/2)-1
+	
+
+
+	

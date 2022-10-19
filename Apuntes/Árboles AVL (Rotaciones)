@@ -1,0 +1,25 @@
+
+
+-Borrado de árbol AVL
+	
+	También hay casos además de los 4 principales
+	1.- I=	
+	2.- D=
+		Es más fácil hacer rotaciones simples 
+
+árboles B
+	Creador: R. Bayer y E. McCreight 
+	Año: 1972
+
+	Razones de su existencia: 
+		-Cueando el rendimiento en la velocidad del acceso a datos es un prblema
+
+	Problema que resuleve: Guardar/mantener índces de almacenamiento externo para acceso a bases de datos, de forma que tendríamos un acantidad de información muy grande organizada de forma que el acceso a una clave sea lo más rápido posible. 
+
+	
+	Árboles B
+
+	Definiciones importantes:
+		Diccionearios: 
+		Colchones: 
+		

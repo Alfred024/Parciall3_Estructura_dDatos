@@ -1,0 +1,12 @@
+Apuntes de Leal --> Unidad 4
+
+En programación hay dos recursos esenciales a tomar en cuenta: Tiempo y y emmoria para optimizar el uso de uno a vecces es necesario sacrificar el uso de otro.
+
+Hay que tener en cuenta que en las estructuras dinámicas, el uso de apntadores implica timepo a la hora de navegar por ellos, por lo que es importante encontrar formas en las que podamos emplear estructuras de datos en las que no dependamos tanto del uso de dicho recurso. 
+
+	Árbol ordenado:
+		-Raíz: altura == 0/1
+		-Hijo raíz: altura == 1/2
+
+Agregar rotaciones de los árboles
+	
