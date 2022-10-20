@@ -11,6 +11,7 @@ public class Exe2 {
                          {0,0,1,1,0,1,0},
                          {0,0,1,1,1,0,1},
                          {0,1,0,1,0,1,0}};
+    
     int ruta[] = new int[grafo.length];
     int nivel, EI=5, EF=0, EA;
     Pila stack;

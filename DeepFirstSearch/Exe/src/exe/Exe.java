@@ -1,98 +1,71 @@
 
-package exe;
+package exe2;
 
-public class Exe {
-    
-    //int grafo[][] = {};
-    int grafo[][] =     {{0,1,1,0,0}, 
-                         {1,0,0,0,0}, 
-                         {1,0,0,1,1}, 
-                         {0,0,1,0,1},
-                         {0,0,1,1,0}};
-    
-    
-    int grafo2[][] =    {{0,1,0,0,0,0,0}, 
+
+
+public class Exe2 {
+    int  grafo[][] =    {{0,1,0,0,0,0,0}, 
                          {1,0,0,1,0,0,1}, 
                          {0,0,0,0,1,1,0}, 
                          {0,1,0,0,1,1,1},
                          {0,0,1,1,0,1,0},
                          {0,0,1,1,1,0,1},
                          {0,1,0,1,0,1,0}};
-    
-    
     int ruta[] = new int[grafo.length];
-    int rutaBacktarck[] = new int[grafo.length];
-    int nivel=0,EI=2,EF=6,EA;
+    int nivel, EI=5, EF=0, EA;
     Pila stack;
-
+    
     public static void main(String[] args) {
-        Exe DPS = new Exe();
-        DPS.búsquedaDPS();
-    }
+        Exe2 x = new Exe2();
+        x.procesa();
+   }
 
-    void llenarMatriz(){
-        /*Debe establecer la longitud de la matriz para luego llenarla, además que también le pasamos el nodo inicial y el final*/
-    }
-    
-    void búsquedaDPS(){
-        boolean rutaEncontrada = false;
-        stack = new Pila();
-        Nodo auxiliar;
-        stack.PUSH(EA, nivel);
+   void procesa(){
+    stack=new Pila();
+    boolean banderaExito=false;
+    nodo temp;
+    int tempRuta;
+    stack.push(EI,0);
 
-        do{
-            auxiliar = stack.POP();
-            EA = auxiliar.value;
-            nivel = auxiliar.nivel;
-            ruta[nivel] = EA;
-            if(EA == EF){
-                rutaEncontrada = true;
-            }else{
-                expandir(EA, nivel+1);
-            }
-        }while(stack.tope != null && !rutaEncontrada);
+    do{
+        temp=stack.pop();
+        EA=temp.value;
+        nivel=temp.nivel;
+        ruta[nivel]=EA;
+        if(EA==EF)
+            banderaExito=true;
+        else
+            expandir(EA,nivel+1);
+    }while(stack.tope!=null && !banderaExito);
 
-        if(rutaEncontrada){
-            System.out.println("Sí hay ruta :)");
-            int vueltas;
-            for (vueltas = 0; vueltas < grafo.length; vueltas++) {
-                System.out.println(ruta[vueltas]+"-->");
-            }
-        }else{
-            System.out.println("No está en ruta ;(");
+    if(banderaExito){
+        System.out.println("Si hay rutaa: ");
+        for(tempRuta=0; tempRuta<=nivel; tempRuta++){
+            System.out.print(ruta[tempRuta]+",");
+        }
+    }else{
+        System.out.println("No hay ruta");
+    }       
+
+   }
+   void expandir(int verticeActual, int nivelActual){
+    int columnaGrafo;    
+    for(columnaGrafo=0; columnaGrafo<grafo.length; columnaGrafo++){
+        if(grafo[verticeActual][columnaGrafo]==1 && No_en_ruta2(columnaGrafo)){
+            stack.push(columnaGrafo,nivelActual);
         }
     }
-
-    void expandir(int verticeActual, int nivel){
-        int vueltas;
-        for (vueltas = 0; vueltas < grafo.length; vueltas++) {
-            if(grafo[verticeActual][vueltas] == 1 && No_en_ruta(verticeActual)){
-                stack.PUSH(vueltas, nivel);
-            }
-        }
+   }
+   boolean No_en_ruta(int verticeActual){
+    int index=0;
+    while(index<nivel && ruta[index]!=verticeActual){
+        index++;
     }
-
-    boolean está_enRuta(int verticeBuscado){
-        int indexRuta=0;
-        boolean loEncontré=false;
-
-        for (indexRuta = 0; indexRuta < nivel; indexRuta++) {
-            if(verticeBuscado == ruta[indexRuta]){
-                loEncontré = true;
-            }
-        }
-        return loEncontré;
+    if(ruta[index]!=verticeActual){
+         return true;
+    }else{
+        return false;
     }
-    
-    boolean No_en_ruta(int p_vertice){
-    int v_posi=0;
-    while(v_posi<nivel && ruta[v_posi]!=p_vertice){
-        v_posi++;
-    }
-    if(ruta[v_posi]!=p_vertice)
-        return true;
-    else return false;
-
    }
    
    /*Al parecer sí funciona este método*/
@@ -107,41 +80,39 @@ public class Exe {
            return true;
        }
    }
-    
 
 }
-
-class Nodo{
+class Pila{
+    nodo tope;
+    Pila(){
+        tope=null;
+    }
+    void push(int value, int nivel){
+        nodo temp;
+        temp = new nodo(value, nivel);
+        if(tope==null)
+            tope = temp;
+        else{
+            temp.next=tope;
+            tope=temp;
+        }
+    }
+    nodo pop(){
+        nodo temp;
+        temp = tope;
+        if(tope!=null)
+            tope=tope.next;
+        return temp;
+    }
+}
+class nodo{
     int value;
     int nivel;
-    Nodo next;
-    public Nodo(int value, int nivel) {
-        this.value = value;
-        this.next = null;
-        this.nivel = nivel;
+    nodo next;
+    nodo(int value, int nivel){
+        this.value=value;
+        this.next=null;
+        this.nivel=nivel;
+        
     }
-}
-
-class Pila{
-    Nodo tope;
-    void PUSH(int value, int nivel){
-        Nodo nuevoNodo = new Nodo(value, nivel);
-        if(tope == null){
-            tope = nuevoNodo;
-        }else{
-            nuevoNodo.next = tope;
-            tope = nuevoNodo;
-        }
-    }
-    Nodo POP(){
-        if(tope == null){
-            return null;
-        }else{
-            Nodo nodoPOP = tope;
-            tope = tope.next;
-            return nodoPOP;
-        }
-    }
-
-    
 }
