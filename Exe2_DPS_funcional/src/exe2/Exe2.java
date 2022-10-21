@@ -62,11 +62,7 @@ public class Exe2 {
     while(index<nivel && ruta[index]!=verticeActual){
         index++;
     }
-    if(ruta[index]!=verticeActual){
-         return true;
-    }else{
-        return false;
-    }
+        return ruta[index]!=verticeActual;
    }
    
    /*Al parecer sí funciona este método*/
