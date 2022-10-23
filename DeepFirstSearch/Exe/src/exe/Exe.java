@@ -1,9 +1,9 @@
 
-package exe2;
+package exe;
 
 
 
-public class Exe2 {
+public class Exe {
     int  grafo[][] =    {{0,1,0,0,0,0,0}, 
                          {1,0,0,1,0,0,1}, 
                          {0,0,0,0,1,1,0}, 
@@ -16,7 +16,7 @@ public class Exe2 {
     Pila stack;
     
     public static void main(String[] args) {
-        Exe2 x = new Exe2();
+        Exe x = new Exe();
         x.procesa();
    }
 
