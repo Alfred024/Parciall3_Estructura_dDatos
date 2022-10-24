@@ -6,8 +6,10 @@ public class Árbol_Binario2 {
     public static void main(String[] args) {
         Árbol x = new Árbol();
         x.in(100);x.in(200);x.in(50);
-        x.in(25); x.in(55);x.in(35);
-        x.in(53); x.in(52); x.in(54);
+        x.in(25); x.in(65);x.in(35);
+        x.in(60); x.in(52); x.in(64);
+        x.in(68); x.in(62); x.in(61);
+        x.in(63);
         
         
         System.out.println("\nárbol");
@@ -21,9 +23,13 @@ public class Árbol_Binario2 {
         System.out.println(x.raiz.izq.der.izq.izq.value); //52
         System.out.println(x.raiz.izq.der.izq.der.value);//54
         
-        System.out.println("\nCASO#1");
-        x.out(54);
-        System.out.println(x.raiz.izq.der.izq.value); //53
+        /*System.out.println("\nCASO #1");
+        x.out(64);*/
+        
+        System.out.println("\nCASO #2");
+        x.out(65);
+        System.out.println(x.raiz.izq.der.value); //64
+        System.out.println(x.raiz.izq.der.izq.der.value); //62
         //System.out.println(x.raiz.izq.der.izq.izq.value); //52 (Ya no existe porque lo borramos)
         //System.out.println(x.raiz.izq.der.izq.der.value); //54 (Ya no existe porque lo borramos)
         
@@ -50,7 +56,6 @@ class Árbol{
         if(raiz == null){
             raiz = newNodo;
         }else{
-            
             Nodo temp = buscarNodo(value);
             if(value < temp.value){
                 temp.izq = newNodo;
@@ -63,7 +68,6 @@ class Árbol{
     Nodo buscarNodo(int searched){
         Nodo vigilante=raiz;
         Nodo aux = raiz;
-
         while(aux != null && aux.value!=searched){
             vigilante = aux;
             if(searched < aux.value){
@@ -76,7 +80,6 @@ class Árbol{
     }
 
     Nodo anteOpost(Nodo partida){
-        //El más grande de la izquierda(Antecesor)
         Nodo resultado=partida;
         if(resultado.izq != null){
             resultado = resultado.izq;
@@ -95,7 +98,7 @@ class Árbol{
     void out(int toDelete){
         Nodo temp = buscarNodo(toDelete);
         boolean izquierda;
-        //CASO #1: El nodo a eliminar es una hoja
+        
         if(casoHojas(temp, toDelete)){
             if(toDelete < temp.value){
                 temp.izq = null;
@@ -103,19 +106,31 @@ class Árbol{
                 temp.der = null;
             }
         }else{
+            //CASO #2: Ignora si es que el nodo a borrar tiene uno o más hijos, lo que hace es buscar el antecesor(o postdecesor, en caso que no haya camino a la izquierda)
+            //y reemplaza elvalor de este (antecesor/postdecesor) en el vértice actual, además que lleva el control de ese vértice reeemplazo, por si tenía hijos, reasignar
+            //los punteros de manera que la figura del árbol siga la estructura lógica
             Nodo replace;
-            //CASO #2: Tiene hijos/No es una hoja
-            //Podemos progamar el antecesor y postdecesor y eso resolvería ambos casos
             if(toDelete < temp.value){
-                replace = anteOpost(temp.izq);
-                izquierda = true;
+                temp = temp.izq;
             }else{
-                replace = anteOpost(temp.der);
-                izquierda = false;
+                temp = temp.der;
             }
+            replace = anteOpost(temp);
+            
+            if(replace.value < temp.value){
+                izquierda = true; //---> Buscó al antecesor
+            }else{
+                izquierda = false; //---> Buscó al postdecesor
+            }
+            
+            Nodo nuevasRamas = buscarNodo(replace.value);
+            if(izquierda){
+                nuevasRamas.der = replace.izq;
+            }else{
+                nuevasRamas.izq = replace.der;
+            }
+            temp.value = replace.value;
         }
-        
-        
         
     }
 

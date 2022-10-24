@@ -19,7 +19,7 @@ Cuándo búsqueda en anchura y cuándo en profundidad?
 	la ruta y no nos garantiza encontrar la mejor alternativa.
 
 	Profundidad tampoco nos garantiza encontrar la mejor ruta, podemos llegar al destino, pero por accidente
-	En porgramación: La cola reemplaza a la pila y la expansión es en todos los niveles, además que hay que tener el control de las rutas en cada uno de los casos
+	BFS: La cola reemplaza a la pila y la expansión es en todos los niveles, además que hay que tener el control de las rutas en cada uno de los casos
 
 Aún teniendo estas búsquedas, tampoco garantiza una buena solución para solucionar aquellos problemas de combinatorias, o algún otro problema
 
@@ -27,7 +27,7 @@ Aún teniendo estas búsquedas, tampoco garantiza una buena solución para soluc
 Cómo resuelvo un problema con búsqueda informada??
 	En el caso de un grafo, podemos asignar un peso a las rutas /enlaces de los nodos
 
-	Escalada por la máxima pendiente/Hill climbing ---> Profundidad + anchura
+	Escalada por la máxima pendiente/Hill climbing ---> Profundidad + anchura  (Apilar colas o Encolar pilas???)
 
 		En la expansión, se tendrá que hacer la pregunta de qué camino le conviene más
 
@@ -38,7 +38,7 @@ Cómo resuelvo un problema con búsqueda informada??
 
 	Grafos O--> Anchura + Profundidad
 
-		La estrucutra de datos que utilizamos se convierte en una esecie de híbrido entre una lista y una pila
+		La estrucutra de datos que utilizamos se convierte en una especie de híbrido entre una lista y una pila
 
 		Grafos O para un laberinto
 
