@@ -17,11 +17,12 @@ public class Árbol_Binario2 {
         System.out.println(x.raiz.der.value); //200
         System.out.println(x.raiz.izq.value); //50
         System.out.println(x.raiz.izq.izq.value); //25
-        System.out.println(x.raiz.izq.der.value); //55
+        System.out.println(x.raiz.izq.der.value); //65
+        System.out.println(x.raiz.izq.der.der.value); //68
         System.out.println(x.raiz.izq.izq.der.value); //35
-        System.out.println(x.raiz.izq.der.izq.value); //53
+        System.out.println(x.raiz.izq.der.izq.value); //60
         System.out.println(x.raiz.izq.der.izq.izq.value); //52
-        System.out.println(x.raiz.izq.der.izq.der.value);//54
+        System.out.println(x.raiz.izq.der.izq.der.value);//64
         
         /*System.out.println("\nCASO #1");
         x.out(64);*/
@@ -30,8 +31,6 @@ public class Árbol_Binario2 {
         x.out(65);
         System.out.println(x.raiz.izq.der.value); //64
         System.out.println(x.raiz.izq.der.izq.der.value); //62
-        //System.out.println(x.raiz.izq.der.izq.izq.value); //52 (Ya no existe porque lo borramos)
-        //System.out.println(x.raiz.izq.der.izq.der.value); //54 (Ya no existe porque lo borramos)
         
     }
     
